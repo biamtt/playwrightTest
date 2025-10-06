@@ -1,5 +1,5 @@
 import {launchPage} from "../utils/commands";
-import {test, expect} from "../fixtures/pageFixtures";
+import {test} from "../fixtures/pageFixtures";
 
 test.describe("Testing the Cart Feature", () => {
     test.beforeEach(async ({page}) => {
@@ -9,8 +9,7 @@ test.describe("Testing the Cart Feature", () => {
     test("Verify cart page availability", async ({loginPage, credentials, translation}) => {
         const inventoryPage = await loginPage.performSuccessLogin(credentials.validUser, credentials.defaultPassword);
         const cartPage = await inventoryPage.accessCartPage()
-        const title = await cartPage.validateCartPageTitle()
-        expect(title).toBe(translation.en.cartPage.title);
+        await cartPage.validateCartPageTitle(translation.en.cartPage.title)
         await inventoryPage.logout();
     })
 

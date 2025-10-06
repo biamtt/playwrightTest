@@ -3,12 +3,22 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui",
+    "test:login": "npx playwright test tests/e2e/loginTest.spec.js",
+    "test:cart": "npx playwright test tests/e2e/cartTest.spec.js",
+    "test:headed": "npx playwright test --headed",
+    "test:report": "npm run test && npm run allure:open",
+    "allure:open": "npx allure open",
+    "allure:generate": "npx allure generate allure-results --clean"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.55.1",
-    "@types/node": "^24.6.1"
+    "@types/node": "^24.6.1",
+    "allure-playwright": "^3.4.1"
   }
 }
