@@ -1,0 +1,22 @@
+{
+  "en": {
+    "errorMessage": {
+      "lockedOutUser": "Epic sadface: Sorry, this user has been locked out.",
+      "usernameRequired": "Epic sadface: Username is required",
+      "passwordRequired": "Epic sadface: Password is required",
+      "invalidCredentials": "Epic sadface: Username and password do not match any user in this service"
+    },
+    "inventoryPage": {
+      "title": "Products",
+      "item0": "Sauce Labs Bike Light",
+      "item1": "Sauce Labs Bolt T-Shirt",
+      "item2": "Sauce Labs Onesie",
+      "item3": "Test.allTheThings() T-Shirt (Red)",
+      "item4": "Sauce Labs Backpack",
+      "item5": "Sauce Labs Fleece Jacket"
+    },
+    "cartPage": {
+      "title": "Your Cart"
+    }
+  }
+}
