@@ -1,10 +1,7 @@
 import {defineConfig, devices} from '@playwright/test';
 
-/**
- * See https://playwright.dev/docs/test-configuration.
- */
 export default defineConfig({
-    testDir: './tests/e2e',
+    testDir: './tests',
     timeout: 30000,
     expect: {
         timeout: 6000
@@ -29,8 +26,22 @@ export default defineConfig({
     /* Configure projects for major browsers */
     projects: [
         {
-            name: 'chromium',
-            use: {...devices['Desktop Chrome']},
+            name: 'ui-tests',
+            use: {
+                ...devices['Desktop Chrome'],
+            },
+            testMatch: /.*e2e.*\.spec\.js/
+        },
+        {
+            name: 'api-tests',
+            use: {
+                baseURL: 'https://petstore.swagger.io/v2',
+                extraHTTPHeaders: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                }
+            },
+            testMatch: /.*api.*\.spec\.js/
         }
     ]
 });

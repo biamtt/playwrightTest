@@ -1,7 +1,16 @@
 # Playwright E2E Test Suite
 
-This is a test suite for Demo Web Application (https://www.saucedemo.com/), built with Playwright, TypeScript,
-JavaScript and reports generated with Allure.
+E2E test automation for UI and API testing using Playwright.
+
+## Coverage
+
+### UI Testing
+- **Application:** SauceDemo [https://www.saucedemo.com/]
+- **Features:** Login and Cart Management
+
+### API Testing
+- **Application:** Petstore API [https://www.petstore.swagger.io/]
+- **Endpoint:** /pet and /store
 
 ## Let's start
 
@@ -25,24 +34,32 @@ JavaScript and reports generated with Allure.
    ```
    npm install
    ```
+4. Install Playwright
+    ```
+   npx playwright install
+   ```
 
 ## Running the tests
 
-- To run all the tests:
+- To run all the tests (UI + API):
   ```
-  npm run test
+  npm test
+  ```
+- To run UI tests only:
+  ```
+  npm run test:ui
+  ```
+- To run API tests only:
+  ```
+  npm run test:api
   ```
 - To run loginTest test class:
   ```
-  npm run test:login
+  npx playwright test tests/e2e/loginTest.spec.js
   ```
 - To run cartTest test class:
   ```
-  npm run test:cart
-  ```
-- To run all tests in UI Mode
-  ```
-  npm run test:ui
+  npx playwright test tests/e2e/cartTest.spec.js
   ```
 - To run all tests in a visible browser
   ```
@@ -50,5 +67,5 @@ JavaScript and reports generated with Allure.
   ```
 - To run all tests and generate an Allure report
   ```
-  npm run test:report
+  npm run report
   ```
